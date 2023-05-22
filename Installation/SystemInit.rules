@@ -1,0 +1,71 @@
+<genxml>
+	<select>
+		<selectedprojectnameview>AppThemes-W3-CSS</selectedprojectnameview>
+		<appthemeview>rocketnewsapi.SimpleNews</appthemeview>
+		<appthemeviewversion>1.0</appthemeviewversion>
+		<selectedprojectnameadmin>AppThemes-W3-CSS</selectedprojectnameadmin>
+		<appthemeadmin>rocketnewsapi.SimpleNews</appthemeadmin>
+		<appthemeadminversion>1.0</appthemeadminversion>
+	</select>
+	<listpage></listpage>
+	<detailpage></detailpage>
+	<default>true</default>
+	<securitykey></securitykey>
+	<maxarticles>1000</maxarticles>
+	<articlesimagelimit>12</articlesimagelimit>
+	<articlesdocumentlimit>12</articlesdocumentlimit>
+	<imageresize>640</imageresize>
+	<sqlfilterarticle>
+		and (
+		isnull(articlename.GUIDKey,'') like '%{searchtext}%'
+		or isnull([XMLData].value('(genxml/textbox/articleref)[1]','nvarchar(max)'),'') like '%{searchtext}%'
+		or isnull([XMLData].value('(genxml/lang/genxml/textbox/articlekeywords)[1]','nvarchar(max)'),'') like '%{searchtext}%'
+		)
+	</sqlfilterarticle>
+	<key>sqlorderby-product-ref-desc</key>
+	<value>order by RLangIdx.XmlData.value('(genxml/textbox/articleref)[1]','nvarchar(max)') desc        </value>
+	<schedulerrunhours>24</schedulerrunhours>
+	<active>true</active>
+	<emailon>true</emailon>
+	<debugmode>false</debugmode>
+	<sqlorderbyproduct
+	  list="true">
+		<genxml>
+			<default>true</default>
+			<key>sqlorderby-product-random</key>
+			<value>order by newid()	    </value>
+		</genxml>
+		<genxml>
+			<default>true</default>
+			<key>sqlorderby-product-name</key>
+			<value>order by articlename.GUIDKey	    </value>
+		</genxml>
+		<genxml>
+			<default>true</default>
+			<key>sqlorderby-product-name-desc</key>
+			<value>order by articlename.GUIDKey desc	    </value>
+		</genxml>
+		<genxml>
+			<default>true</default>
+			<key>sqlorderby-product-ref</key>
+			<value>order by RLangIdx.XmlData.value('(genxml/textbox/articleref)[1]','nvarchar(max)')        </value>
+		</genxml>
+		<genxml>
+			<default>true</default>
+			<key>sqlorderby-product-ref-desc</key>
+			<value>order by RLangIdx.XmlData.value('(genxml/textbox/articleref)[1]','nvarchar(max)') desc        </value>
+		</genxml>
+	</sqlorderbyproduct>
+	<lang>
+		<genxml>
+			<sqlorderbyproduct
+			  list="true">
+				<genxml />
+				<genxml />
+				<genxml />
+				<genxml />
+				<genxml />
+			</sqlorderbyproduct>
+		</genxml>
+	</lang>
+</genxml>
