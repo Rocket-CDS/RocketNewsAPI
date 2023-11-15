@@ -17,10 +17,6 @@
     <ProjectReference Include="..\RocketDirectoryAPI\RocketDirectoryAPI.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Themes\config-w3\1.0\css\" />
-  </ItemGroup>
-
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="DNNpackager.exe $(ProjectDir) $(ProjectDir)$(OutDir) $(ConfigurationName)" />
   </Target>
