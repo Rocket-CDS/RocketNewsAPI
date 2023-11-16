@@ -1,0 +1,93 @@
+﻿<genxml>
+	<hidden>
+		<systemkey>rocketnewsapi</systemkey>
+		<basesystemkey>rocketdirectoryapi</basesystemkey>
+	</hidden>
+	<select>
+		<selectedprojectnameadmin>AppTheme-AgenceSesame</selectedprojectnameadmin>
+		<appthemeadmin>rocketnewsapi.Articles</appthemeadmin>
+		<appthemeadminversion>1.0</appthemeadminversion>
+	</select>
+	<listpage>56</listpage>
+	<detailpage>56</detailpage>
+	<default>true</default>
+	<config>
+		<sortorder>1</sortorder>
+	</config>
+	<maxarticles>1000</maxarticles>
+	<articlesimagelimit>12</articlesimagelimit>
+	<articlesdocumentlimit>12</articlesdocumentlimit>
+	<imageresize>640</imageresize>
+	<securitykey></securitykey>
+	<sqlfilterarticle>
+		and (
+		isnull(articlename.GUIDKey,'') like '%{searchtext}%'
+		or isnull([XMLData].value('(genxml/textbox/articleref)[1]','nvarchar(max)'),'') like '%{searchtext}%'
+		or isnull([XMLData].value('(genxml/lang/genxml/textbox/articlekeywords)[1]','nvarchar(max)'),'') like '%{searchtext}%'
+		)
+	</sqlfilterarticle>
+	<key>sqlorderby-product-ref-desc</key>
+	<value>			order by articleref.GUIDKey desc		</value>
+	<schedulerrunhours>24</schedulerrunhours>
+	<emailon>true</emailon>
+	<debugmode>false</debugmode>
+	<secureupload>false</secureupload>
+	<checkboxfilterand>false</checkboxfilterand>
+	<checkbox>
+		<active>false</active>
+	</checkbox>
+	<sqlorderbyproduct list="true">
+		<genxml>
+			<default>true</default>
+			<key>sqlorderby-product-random</key>
+			<value>order by newid()	    </value>
+		</genxml>
+		<genxml>
+			<default>true</default>
+			<key>sqlorderby-product-name</key>
+			<value>order by articlename.GUIDKey	    </value>
+		</genxml>
+		<genxml>
+			<default>true</default>
+			<key>sqlorderby-product-name-desc</key>
+			<value>order by articlename.GUIDKey desc	    </value>
+		</genxml>
+		<genxml>
+			<default>true</default>
+			<key>sqlorderby-product-ref</key>
+			<value>			order by articleref.GUIDKey		</value>
+		</genxml>
+		<genxml>
+			<default>true</default>
+			<key>sqlorderby-product-ref-desc</key>
+			<value>			order by articleref.GUIDKey desc		</value>
+		</genxml>
+	</sqlorderbyproduct>
+	<plugins list="true">
+		<genxml>
+			<hidden>
+				<pluginkey>rocketdirectoryautocomplete</pluginkey>
+			</hidden>
+			<config>
+				<sortorder>1</sortorder>
+			</config>
+			<checkbox>
+				<active>false</active>
+			</checkbox>
+		</genxml>
+	</plugins>
+	<lang>
+		<genxml>
+			<sqlorderbyproduct list="true">
+				<genxml />
+				<genxml />
+				<genxml />
+				<genxml />
+				<genxml />
+			</sqlorderbyproduct>
+			<plugins list="true">
+				<genxml />
+			</plugins>
+		</genxml>
+	</lang>
+</genxml>
