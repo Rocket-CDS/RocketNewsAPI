@@ -25,42 +25,58 @@
 		or isnull([XMLData].value('(genxml/textbox/articleref)[1]','nvarchar(max)'),'') like '%{searchtext}%'
 		or isnull([XMLData].value('(genxml/lang/genxml/textbox/articlekeywords)[1]','nvarchar(max)'),'') like '%{searchtext}%'
 		)
+		and
+		(
+		[XMLData].value('(genxml/textbox/publisheddate)[1]','nvarchar(max)') &gt;= '{searchdate1}' or '{searchdate1}' = ''
+		and
+		[XMLData].value('(genxml/textbox/publisheddate)[1]','nvarchar(max)') &lt;= '{searchdate2}' or '{searchdate2}' = ''
+		)
 	</sqlfilterarticle>
-	<key>sqlorderby-product-ref-desc</key>
-	<value>			order by articleref.GUIDKey desc		</value>
+	<key>sqlorderby-publisheddate</key>
+	<value>order by publisheddate.GUIDKey</value>
 	<schedulerrunhours>24</schedulerrunhours>
 	<emailon>true</emailon>
 	<debugmode>false</debugmode>
 	<secureupload>false</secureupload>
 	<checkboxfilterand>false</checkboxfilterand>
 	<checkbox>
-		<active>false</active>
+		<active>true</active>
 	</checkbox>
 	<sqlorderbyproduct list="true">
 		<genxml>
 			<default>true</default>
-			<key>sqlorderby-product-random</key>
-			<value>order by newid()	    </value>
+			<key>sqlorderby-publisheddate-desc</key>
+			<value>order by publisheddate.GUIDKey desc</value>
 		</genxml>
 		<genxml>
-			<default>true</default>
+			<default>false</default>
+			<key>sqlorderby-publisheddate</key>
+			<value>order by publisheddate.GUIDKey</value>
+		</genxml>
+		<genxml>
+			<default>false</default>
 			<key>sqlorderby-product-name</key>
 			<value>order by articlename.GUIDKey	    </value>
 		</genxml>
 		<genxml>
-			<default>true</default>
+			<default>false</default>
 			<key>sqlorderby-product-name-desc</key>
-			<value>order by articlename.GUIDKey desc	    </value>
+			<value>order by articlename.GUIDKey desc</value>
 		</genxml>
 		<genxml>
-			<default>true</default>
+			<default>false</default>
 			<key>sqlorderby-product-ref</key>
-			<value>			order by articleref.GUIDKey		</value>
+			<value>order by articleref.GUIDKey</value>
 		</genxml>
 		<genxml>
-			<default>true</default>
+			<default>false</default>
 			<key>sqlorderby-product-ref-desc</key>
-			<value>			order by articleref.GUIDKey desc		</value>
+			<value>order by articleref.GUIDKey desc</value>
+		</genxml>
+		<genxml>
+			<default>false</default>
+			<key>sqlorderby-product-random</key>
+			<value>order by newid()</value>
 		</genxml>
 	</sqlorderbyproduct>
 	<plugins list="true">
