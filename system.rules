@@ -1,6 +1,7 @@
 <genxml>
   <systemkey>rocketnewsapi</systemkey>
-  <systemname>RocketNewsAPI</systemname>
+	<basesystemkey>rocketdirectoryapi</basesystemkey>
+	<systemname>RocketNewsAPI</systemname>
   <databasetable>RocketNewsAPI</databasetable>
   <logtracking>False</logtracking>
   <active>True</active>
