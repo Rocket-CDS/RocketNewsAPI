@@ -2,7 +2,7 @@
 	<packages>
     
 		<package name="RocketNewsAPI" type="Library" version="1.0.0">
-			<friendlyName>RocketNewsAPI Nevoweb</friendlyName>
+			<friendlyName>RocketNewsAPI</friendlyName>
 			<DefinitionName>RocketNewsAPI</DefinitionName>
 			<description>RocketNewsAPI</description>
       <iconFile></iconFile>
