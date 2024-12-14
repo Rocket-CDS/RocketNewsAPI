@@ -4,12 +4,12 @@
 		<basesystemkey>rocketdirectoryapi</basesystemkey>
 	</hidden>
 	<select>
-		<selectedprojectnameadmin>AppTheme-AgenceSesame</selectedprojectnameadmin>
-		<appthemeadmin>rocketnewsapi.Articles</appthemeadmin>
-		<appthemeadminversion>1.0</appthemeadminversion>
+		<selectedprojectnameadmin></selectedprojectnameadmin>
+		<appthemeadmin></appthemeadmin>
+		<appthemeadminversion></appthemeadminversion>
 	</select>
-	<listpage>56</listpage>
-	<detailpage>56</detailpage>
+	<listpage></listpage>
+	<detailpage></detailpage>
 	<default>true</default>
 	<config>
 		<sortorder>1</sortorder>
@@ -21,17 +21,26 @@
 	<securitykey></securitykey>
 	<sqlfilterarticle>
 		and (
-		isnull(articlename.GUIDKey,'') like '%{searchtext}%'
-		or isnull([XMLData].value('(genxml/textbox/articleref)[1]','nvarchar(max)'),'') like '%{searchtext}%'
-		or isnull([XMLData].value('(genxml/lang/genxml/textbox/articlekeywords)[1]','nvarchar(max)'),'') like '%{searchtext}%'
+		{contains:searchtext}
 		)
 		and
 		(
-		[XMLData].value('(genxml/textbox/publisheddate)[1]','nvarchar(max)') &gt;= '{searchdate1}' or '{searchdate1}' = ''
+		publisheddate.GUIDKey &gt;= '{searchdate1}' or '{searchdate1}' = ''
 		and
-		[XMLData].value('(genxml/textbox/publisheddate)[1]','nvarchar(max)') &lt;= '{searchdate2}' or '{searchdate2}' = ''
+		publisheddate.GUIDKey &lt;= '{searchdate2}' or '{searchdate2}' = ''
 		)
 	</sqlfilterarticle>
+	<sqlfilterarticleadmin>
+		and (
+		{contains:searchtext}
+		)
+		and
+		(
+		publisheddate.GUIDKey &gt;= '{searchdate1}' or '{searchdate1}' = ''
+		and
+		publisheddate.GUIDKey &lt;= '{searchdate2}' or '{searchdate2}' = ''
+		)
+	</sqlfilterarticleadmin>
 	<key>sqlorderby-publisheddate</key>
 	<value>order by publisheddate.GUIDKey</value>
 	<schedulerrunhours>24</schedulerrunhours>
@@ -56,7 +65,7 @@
 		<genxml>
 			<default>false</default>
 			<key>sqlorderby-product-name</key>
-			<value>order by articlename.GUIDKey	    </value>
+			<value>order by articlename.GUIDKey</value>
 		</genxml>
 		<genxml>
 			<default>false</default>

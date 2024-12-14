@@ -14,6 +14,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RocketNewsAPI", "RocketNews
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RocketDirectoryAPI", "..\RocketDirectoryAPI\RocketDirectoryAPI.csproj", "{EB646EDB-BAC4-4B65-95F9-39B8495590D2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RocketEventsAPI", "..\RocketEventsAPI\RocketEventsAPI.csproj", "{AA9D412A-E77C-4732-B4F5-59C9D3A36205}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Comp All|Any CPU = Comp All|Any CPU
@@ -70,6 +72,16 @@ Global
 		{EB646EDB-BAC4-4B65-95F9-39B8495590D2}.Razor|Any CPU.Build.0 = Razor|Any CPU
 		{EB646EDB-BAC4-4B65-95F9-39B8495590D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB646EDB-BAC4-4B65-95F9-39B8495590D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA9D412A-E77C-4732-B4F5-59C9D3A36205}.Comp All|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA9D412A-E77C-4732-B4F5-59C9D3A36205}.Comp All|Any CPU.Build.0 = Debug|Any CPU
+		{AA9D412A-E77C-4732-B4F5-59C9D3A36205}.CompAll|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA9D412A-E77C-4732-B4F5-59C9D3A36205}.CompAll|Any CPU.Build.0 = Debug|Any CPU
+		{AA9D412A-E77C-4732-B4F5-59C9D3A36205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA9D412A-E77C-4732-B4F5-59C9D3A36205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA9D412A-E77C-4732-B4F5-59C9D3A36205}.Razor|Any CPU.ActiveCfg = Release|Any CPU
+		{AA9D412A-E77C-4732-B4F5-59C9D3A36205}.Razor|Any CPU.Build.0 = Release|Any CPU
+		{AA9D412A-E77C-4732-B4F5-59C9D3A36205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA9D412A-E77C-4732-B4F5-59C9D3A36205}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
