@@ -20,26 +20,20 @@
 	<imageresize>640</imageresize>
 	<securitykey></securitykey>
 	<sqlfilterarticle>
-		and (
+		<![CDATA[
 		{contains:searchtext}
-		)
 		and
 		(
-		publisheddate.GUIDKey &gt;= '{searchdate1}' or '{searchdate1}' = ''
-		and
-		publisheddate.GUIDKey &lt;= '{searchdate2}' or '{searchdate2}' = ''
+			publisheddate.GUIDKey &gt;= '{searchdate1}' or '{searchdate1}' = ''
+			and
+			publisheddate.GUIDKey &lt;= '{searchdate2}' or '{searchdate2}' = ''
 		)
+		]]>
 	</sqlfilterarticle>
 	<sqlfilterarticleadmin>
-		and (
+		<![CDATA[
 		{contains:searchtext}
-		)
-		and
-		(
-		publisheddate.GUIDKey &gt;= '{searchdate1}' or '{searchdate1}' = ''
-		and
-		publisheddate.GUIDKey &lt;= '{searchdate2}' or '{searchdate2}' = ''
-		)
+		]]>
 	</sqlfilterarticleadmin>
 	<key>sqlorderby-publisheddate</key>
 	<value>order by publisheddate.GUIDKey</value>
@@ -88,31 +82,4 @@
 			<value>order by newid()</value>
 		</genxml>
 	</sqlorderbyproduct>
-	<plugins list="true">
-		<genxml>
-			<hidden>
-				<pluginkey>rocketdirectoryautocomplete</pluginkey>
-			</hidden>
-			<config>
-				<sortorder>1</sortorder>
-			</config>
-			<checkbox>
-				<active>false</active>
-			</checkbox>
-		</genxml>
-	</plugins>
-	<lang>
-		<genxml>
-			<sqlorderbyproduct list="true">
-				<genxml />
-				<genxml />
-				<genxml />
-				<genxml />
-				<genxml />
-			</sqlorderbyproduct>
-			<plugins list="true">
-				<genxml />
-			</plugins>
-		</genxml>
-	</lang>
 </genxml>
