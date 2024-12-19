@@ -51,35 +51,5 @@
 			<key>sqlorderby-publisheddate-desc</key>
 			<value>order by publisheddate.GUIDKey desc</value>
 		</genxml>
-		<genxml>
-			<default>false</default>
-			<key>sqlorderby-publisheddate</key>
-			<value>order by publisheddate.GUIDKey</value>
-		</genxml>
-		<genxml>
-			<default>false</default>
-			<key>sqlorderby-product-name</key>
-			<value>order by articlename.GUIDKey</value>
-		</genxml>
-		<genxml>
-			<default>false</default>
-			<key>sqlorderby-product-name-desc</key>
-			<value>order by articlename.GUIDKey desc</value>
-		</genxml>
-		<genxml>
-			<default>false</default>
-			<key>sqlorderby-product-ref</key>
-			<value>order by articleref.GUIDKey</value>
-		</genxml>
-		<genxml>
-			<default>false</default>
-			<key>sqlorderby-product-ref-desc</key>
-			<value>order by articleref.GUIDKey desc</value>
-		</genxml>
-		<genxml>
-			<default>false</default>
-			<key>sqlorderby-product-random</key>
-			<value>order by newid()</value>
-		</genxml>
 	</sqlorderbyproduct>
 </genxml>
