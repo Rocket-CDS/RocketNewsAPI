@@ -21,22 +21,20 @@
 	<securitykey></securitykey>
 	<sqlfilterarticle>
 		<![CDATA[
-		{contains:searchtext}
-		and
-		(
-			publisheddate.GUIDKey &gt;= '{searchdate1}' or '{searchdate1}' = ''
-			and
-			publisheddate.GUIDKey &lt;= '{searchdate2}' or '{searchdate2}' = ''
-		)
+{contains:viewsearchtext}
+and
+(
+([XMLData].value('(genxml/textbox/publisheddate)[1]','date') >= convert(date,'{searchdate1}') or '{searchdate1}' = '')
+and
+([XMLData].value('(genxml/textbox/publisheddate)[1]','date') <= convert(date,'{searchdate2}') or '{searchdate2}' = '')
+)		
 		]]>
 	</sqlfilterarticle>
 	<sqlfilterarticleadmin>
 		<![CDATA[
-		{contains:searchtext}
+{contains:searchtext}
 		]]>
 	</sqlfilterarticleadmin>
-	<key>sqlorderby-publisheddate</key>
-	<value>order by publisheddate.GUIDKey</value>
 	<schedulerrunhours>24</schedulerrunhours>
 	<emailon>true</emailon>
 	<debugmode>false</debugmode>
